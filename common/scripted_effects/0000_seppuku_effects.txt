@@ -1,0 +1,188 @@
+﻿#Used for all seppukus
+seppuku_effect = {
+
+	$VICTIM$ = {
+		save_scope_as = victim
+	}
+
+	show_as_tooltip = {
+		$VICTIM$ = {
+			death = {
+				death_reason = death_seppuku
+			}
+		}
+	}
+
+	#If you have the Human Sacrifice tenet, give victim an appropriate death reason
+	hidden_effect = {
+		$VICTIM$ = {
+			death = {
+				death_reason = death_seppuku
+			}
+		}
+	}
+}
+
+
+junshi_prestiege_opinion_effect = {
+	$VICTIM$ = {
+		save_scope_as = victim
+	}
+
+	$LIEGE$ = {
+		save_scope_as = liege
+	}
+
+	scope:victim = {
+		# Victim's direct family
+		every_close_family_member = {
+			add_to_temporary_list = victim_family_list
+		}
+		
+		if = {
+			limit = {
+				any_in_list = {
+					list = victim_family_list
+					count > 0
+				}
+			}
+			if = {
+				# approved
+				limit = {
+					has_character_flag = junshiAPPROVED
+				}
+				scope:victim.primary_heir = {
+					add_prestige = 1000
+					dynasty = {
+						add_dynasty_prestige = 100
+					}
+				}
+				every_vassal = {
+					if = {
+						limit = {
+							exists = scope:victim.primary_heir
+						}
+						add_opinion = {
+							modifier = honoured_junshi_opinion
+							target = scope:victim.primary_heir
+						}
+					}
+				}
+				every_in_list = {
+					list = victim_family_list
+					custom = all_close_family_and_spouses
+					add_prestige = 500
+				}
+				death = {
+					death_reason = death_junshi
+				}
+			}
+			else_if = {
+				# denied
+				limit = {
+					has_character_flag = junshiDENIED
+				}
+				scope:victim.primary_heir = {
+					add_prestige = 500
+					dynasty = {
+						add_dynasty_prestige = 50
+					}
+				}
+				every_vassal = {
+					if = {
+						limit = {
+							exists = scope:victim.primary_heir
+						}
+						add_opinion = {
+							modifier = honoured_junshi_opinion
+							target = scope:victim.primary_heir
+							opinion = 25
+						}
+					}
+				}
+				every_in_list = {
+					list = victim_family_list
+					custom = all_close_family_and_spouses
+					add_prestige = 250
+				}
+				death = {
+					death_reason = death_junshi
+				}
+			}
+			else_if = {
+				limit = {
+					AND = {
+						NOT = { has_character_flag = junshiAPPROVED }
+						NOT = { has_character_flag = junshiDENIED }
+					}
+				}
+				# didn't ask
+				if = {
+					limit = {
+						AND {
+							is_adult = yes
+							is_landed = yes
+							OR {
+								root = {
+									is_knight_of = scope:liege
+								}
+								has_council_position = councillor_chancellor
+								has_council_position = councillor_steward
+								has_council_position = councillor_marshal
+								has_council_position = councillor_spymaster
+								has_council_position = councillor_court_chaplain
+							}
+						}
+					}
+					scope:victim.primary_heir = {
+						add_prestige = -1000
+						dynasty = {
+							add_dynasty_prestige = -100
+						}
+					}
+					every_vassal = {
+						if = {
+							limit = {
+								exists = scope:victim.primary_heir
+							}
+							add_opinion = {
+								modifier = dishonoured_junshi_opinion
+								target = scope:victim.primary_heir
+							}
+						}
+					}
+					every_in_list = {
+						list = victim_family_list
+						custom = all_close_family_and_spouses
+						add_prestige = -500
+					}
+				}
+				else = {
+					scope:victim.primary_heir = {
+						add_prestige = -500
+						dynasty = {
+							add_dynasty_prestige = -50
+						}
+					}
+					every_vassal = {
+						if = {
+							limit = {
+								exists = scope:victim.primary_heir
+							}
+							add_opinion = {
+								modifier = dishonoured_junshi_opinion
+								target = scope:victim.primary_heir
+								opinion = -25
+							}
+						}
+					}
+					every_in_list = {
+						list = victim_family_list
+						custom = all_close_family_and_spouses
+						add_prestige = -250
+					}
+				}
+			}
+		}
+	}
+}

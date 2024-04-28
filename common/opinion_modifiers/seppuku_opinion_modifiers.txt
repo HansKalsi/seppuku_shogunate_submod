@@ -1,0 +1,13 @@
+#OPINIONS SET BY JUNSHI
+
+honoured_junshi_opinion = {
+	opinion = 50
+	years = 10
+	decaying = yes
+}
+
+dishonoured_junshi_opinion = {
+	opinion = -50
+	years = 10
+	decaying = yes
+}

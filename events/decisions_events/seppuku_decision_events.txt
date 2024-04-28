@@ -1,0 +1,341 @@
+namespace = seppuku_decision_event
+
+# Commit Seppuku!
+seppuku_decision_event.0001 = {
+	type = character_event
+	title = seppuku_decision_event.0001.t
+	desc = {
+		first_valid = {
+			desc = seppuku_decision_event.0001.desc
+		}
+	}
+
+	left_portrait = root
+	theme = death
+	override_background = {
+		event_background = commit_seppuku_event_image
+	}
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+	option = {
+		name = seppuku_decision_event.0001.a
+		
+		add_prestige = 100
+		dynasty = {
+			add_dynasty_prestige = 50
+		}
+        
+		seppuku_effect = {
+			VICTIM = root
+		}
+
+		root = {
+			hidden_effect = {
+				send_interface_message = {
+					type = event_generic_neutral
+					title = msg_demanded_seppuku
+					right_icon = root
+					custom_tooltip = msg_demanded_seppuku_desc
+				}
+			}
+		}
+	}
+	option = {
+		name = seppuku_decision_event.0001.b
+	}
+}
+
+## Junshi events
+# Request Junshi
+seppuku_decision_event.0002 = {
+	type = character_event
+	title = seppuku_decision_event.0002.t
+	desc = seppuku_decision_event.0002.desc
+
+	left_portrait = scope:requester
+	theme = death
+	override_background = {
+		event_background = request_junshi_event_image
+	}
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+	# Accept Junshi
+	option = {
+		name = seppuku_decision_event.0002.a
+
+		scope:requester = {
+			# adds flag to requester - which gives option of committing junshi decision
+			add_character_flag = {
+				flag = junshiAPPROVED
+			}
+			trigger_event = seppuku_decision_event.00021
+
+			show_as_tooltip = {
+				add_prestige = 50
+			}
+		}
+	}
+	# Deny Junshi
+	option = {
+		name = seppuku_decision_event.0002.b
+
+		primary_heir = {
+			save_scope_as = HEIR
+		}
+		scope:requester = {
+			#adds different flag to requester - which gives option of committing junshi anyway decision
+			add_character_flag = {
+				flag = junshiDENIED
+			}
+			trigger_event = seppuku_decision_event.00022
+
+			show_as_tooltip = {
+				add_prestige = -50
+			}
+		}
+	}
+}
+
+#Request Junshi - Approved
+seppuku_decision_event.00021 = {
+	type = character_event
+	title = seppuku_decision_event.00021.t
+	desc = seppuku_decision_event.00021.desc
+
+	left_portrait = scope:requester.liege
+	theme = death
+	override_background = {
+		event_background = request_junshi_event_result_image
+	}
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+	option = {
+		name = seppuku_decision_event.00021.a
+
+		add_prestige = 50
+	}
+}
+#Request Junshi - Denied
+seppuku_decision_event.00022 = {
+	type = character_event
+	title = seppuku_decision_event.00022.t
+	desc = seppuku_decision_event.00022.desc
+
+	left_portrait = scope:requester.liege
+	theme = death
+	override_background = {
+		event_background = request_junshi_event_result_image
+	}
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+	option = {
+		name = seppuku_decision_event.00022.a
+
+		add_prestige = -50
+	}
+}
+
+# Commit Junshi - Allowed
+seppuku_decision_event.0003 = {
+	type = character_event
+	title = seppuku_decision_event.0003.t
+	desc = seppuku_decision_event.0003.desc
+
+	left_portrait = root
+	theme = death
+	override_background = {
+		event_background = commit_junshi_accepted_image
+	}
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+	# Accepted Junshi - Do it
+	option = {
+		name = seppuku_decision_event.0003.a
+
+		ai_chance = {
+			base = 90
+		}
+
+		junshi_prestiege_opinion_effect = {
+			VICTIM = root
+			LIEGE = liege
+		}
+
+		root.liege = {
+			hidden_effect = {
+				send_interface_message = {
+					type = event_generic_neutral
+					title = msg_commited_junshi
+					right_icon = root
+					custom_tooltip = msg_commited_junshi_desc
+				}
+			}
+		}
+	}
+
+	# Accepted Junshi - Don't do it
+	option = {
+		name = seppuku_decision_event.0003.b
+
+		ai_chance = {
+			base = 10
+		}
+
+		add_prestige = -1000
+		dynasty = {
+			add_dynasty_prestige = -100
+		}
+		root.liege = {
+			every_vassal = {
+				limit = {
+					NOT = { this = root }
+				}
+				add_opinion = {
+					modifier = dishonoured_junshi_opinion
+					target = root
+				}
+			}
+		}
+		remove_character_flag = junshiAPPROVED
+	}
+}
+
+# Commit Junshi - Denied
+seppuku_decision_event.0004 = {
+	type = character_event
+	title = seppuku_decision_event.0004.t
+	desc = seppuku_decision_event.0004.desc
+
+	left_portrait = root
+	right_portrait = liege
+	theme = death
+	override_background = {
+		event_background = commit_junshi_denied_image
+	}
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+	# Denied Junshi - Do it
+	option = {
+		name = seppuku_decision_event.0004.a
+
+		ai_chance = {
+			base = 60
+		}
+
+		junshi_prestiege_opinion_effect = {
+			VICTIM = root
+			LIEGE = liege
+		}
+		root.liege = {
+			hidden_effect = {
+				send_interface_message = {
+					type = event_generic_neutral
+					title = msg_commited_junshi
+					right_icon = root
+					custom_tooltip = msg_commited_junshi_desc
+				}
+			}
+		}
+	}
+
+	# Denied Junshi - Don't do it
+	option = {
+		name = seppuku_decision_event.0004.b
+
+		ai_chance = {
+			base = 40
+		}
+
+		add_prestige = -500
+		dynasty = {
+			add_dynasty_prestige = -50
+		}
+		root.liege = {
+			every_vassal = {
+				limit = {
+					NOT = { this = root }
+				}
+				add_opinion = {
+					modifier = dishonoured_junshi_opinion
+					target = root
+					opinion = -25
+				}
+			}
+		}
+		remove_character_flag = junshiDENIED
+	}
+}
+
+# Commit Junshi - A Glorious Opportunity (Seppuku)
+seppuku_decision_event.0005 = {
+	type = character_event
+	title = seppuku_decision_event.0005.t
+	desc = seppuku_decision_event.0005.desc
+
+	left_portrait = root
+	right_portrait = liege
+	theme = death
+	override_background = {
+		event_background = commit_junshi_didnt_ask_image
+	}
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+	# Commit Junshi anyway
+	option = {
+		name = seppuku_decision_event.0005.a
+
+		ai_chance = {
+			base = 20
+		}
+
+		add_prestige = 250
+		dynasty = {
+			add_dynasty_prestige = 25
+		}
+
+		root.liege = {
+			hidden_effect = {
+				send_interface_message = {
+					type = event_generic_neutral
+					title = msg_commited_junshi
+					right_icon = root
+					custom_tooltip = msg_commited_junshi_desc
+				}
+			}
+		}
+		
+		death = {
+			death_reason = death_junshi
+		}
+	}
+
+	# Don't do it
+	option = {
+		name = seppuku_decision_event.0005.b
+
+		ai_chance = {
+			base = 80
+		}
+	}
+}

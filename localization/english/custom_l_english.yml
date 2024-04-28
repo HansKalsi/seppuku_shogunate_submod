@@ -1,0 +1,75 @@
+﻿l_english:
+  # Seppuku localisation:
+  custom_seppuku_interaction:0 "Demand Seppuku"
+  custom_seppuku_interaction_desc:0 "Attempt to demand [recipient.GetShortUINameNoTooltip] commits Seppuku"
+
+  custom_seppuku_interaction_event.0001.t:0 "Honourable Redemption"
+  custom_seppuku_interaction_event.0001.desc:0 "I have failed in my duty to serve my Lord, but in his benevolence he has allowed me to give my life honourably to redeem my sins. I take a deep breath and still my mind, then close my eyes as the kaishakuin readies his sword."
+  custom_seppuku_interaction_event.0001.a:0 "It has been the ultimate honour serving you, my Lord"
+
+  DEMAND_SEPPUKU_NOTIFICATION_TEXT:0 "I order you to commit Seppuku!"
+
+  demand_seppuku_decline_summary_war:0 "@warning_icon!#X If [ROOT.Char.GetShortUINameNoTooltip] refuses to commit Seppuku, [ROOT.Char.GetSheHe] will rise up in rebellion with other disgruntled [vassals|E]!#!"
+
+  commit_seppuku_decision:0 "Commit Seppuku"
+  commit_seppuku_decision_desc:0 "If I can no longer serve my lord with my life, then I must save face and honour my clan with my death."
+  commit_seppuku_decision_confirm:0 "I shall give my life for my honour!"
+  commit_seppuku_decision_tooltip:0 "Consider Seppuku"
+  commit_seppuku_decision_effect_tooltip:0 "You will be given an event where you can choose to commit Seppuku"
+
+  seppuku_decision_event.0001.t:0 "Today Is My Day"
+  seppuku_decision_event.0001.desc:0 "By cutting open my stomach, I shall prove my worth as a samurai to my clan and my ancestors!"
+  seppuku_decision_event.0001.a:0 "Commit Seppuku"
+  seppuku_decision_event.0001.b:0 "It is not my time to die."
+
+  death_seppuku:0 "committed Seppuku"
+  death_seppuku_killer:0 "Committed Seppuku"
+
+  msg_demanded_seppuku:0 "Committed Seppuku"
+  msg_demanded_seppuku_desc:0 "Your vassal has honoured your request and proven their eternal honour by committing Seppuku"
+
+  IMPRISONED_SEPPUKU:0 "Demanding Seppuku on imprisoned character: $VALUE|=+0$"
+
+  # Junshi localisation:
+  death_junshi:0 "committed Junshi"
+
+  msg_commited_junshi:0 "Committed Junshi"
+  msg_commited_junshi_desc:0 "Your vassal has committed Junshi"
+
+  seppuku_decision_event.0002.t:0 "A Junshi Request"
+  seppuku_decision_event.0002.desc:0 "My Lord, I have been informed that your situation is critical. I pray to the Buddhas for a speedy recovery, but I fear the worst. If you should die, then I ask you please to take me, [requester.GetShortUIName] along with you. Please, I beg you!"
+  seppuku_decision_event.0002.a:0 "You have my blessing. You may follow me in death."
+  seppuku_decision_event.0002.b:0 "I am grateful for your loyalty, but you must continue to serve the clan."
+  seppuku_decision_event.00021.t:0 "Your Junshi request has been accepted"
+  seppuku_decision_event.00021.desc:0 "You have been a faithful and dutiful vassal. I accept your request; you may join me in the afterlife."
+  seppuku_decision_event.00021.a:0 "Thank you my Lord!"
+  seppuku_decision_event.00022.t:0 "Your Junshi request has been denied"
+  seppuku_decision_event.00022.desc:0 "You are not the only one to earnestly request my permission to follow me in death. You must continue to serve [HEIR.GetShortUIName] and live on to see the clan prosper."
+  seppuku_decision_event.00022.a:0 "Am I not worthy?..."
+
+  seppuku_decision_event.0003.t:0 "My Time Has Come"
+  seppuku_decision_event.0003.desc:0 "Our Great Lord has passed on into the afterlife. In his benevolence, he granted my Junshi request before he died; I will be expected to honour my promise."
+  seppuku_decision_event.0003.a:0 "And honour it I shall!"
+  seppuku_decision_event.0003.b:0 "Promise..? I don't remember making any promise…"
+
+  seppuku_decision_event.0004.t:0 "Save Face"
+  seppuku_decision_event.0004.desc:0 "The time has come - my Lord has passed on into the afterlife. My Junshi request was not granted, however I stand to lose face if I do not prove my undying loyalty to our liege. What should I do?"
+  seppuku_decision_event.0004.a:0 "My loyalty knows no bounds!"
+  seppuku_decision_event.0004.b:0 "My life has value yet; I must bear the shame…"
+
+  seppuku_decision_event.0005.t:0 "A Glorious Opportunity"
+  seppuku_decision_event.0005.desc:0 "I am but a lowly samurai, not worthy of even being considered for the sacred act of Junshi. However, if I take fate into my own hands and prove the bravery and honour of my House, perhaps the new Lord will look to my heir favourably..."
+  seppuku_decision_event.0005.a:0 "Good luck, my son. Farewell!"
+  seppuku_decision_event.0005.b:0 "Who best to serve the new Lord than myself?"
+
+  request_junshi_decision:0 "Request Junshi"
+  request_junshi_decision_desc:0 "My Lord is ailing, I must request Junshi so that they do not have go into the dark alone!"
+  request_junshi_decision_confirm:0 "I am prepared to give my life to spend eternity at your side!"
+  request_junshi_decision_tooltip:0 "Request Junshi from your liege"
+  request_junshi_decision_effect_tooltip:0 "Your liege will be given an event where they choose whether or not to approve your request to commit Junshi"
+
+  commit_junshi_decision:0 "Commit Junshi"
+  commit_junshi_decision_desc:0 "My Lord is ailing, but I shall cross and await for them on the other side!"
+  commit_junshi_decision_confirm:0 "I am prepared to give my life to spend eternity at your side!"
+  commit_junshi_decision_tooltip:0 "Commit Junshi"
+  commit_junshi_decision_effect_tooltip:0 "You will commit honourable Junshi"

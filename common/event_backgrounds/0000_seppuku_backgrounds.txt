@@ -1,0 +1,71 @@
+### HONOURABLE REDEMPTION EVENT IMAGE ###
+honourable_redemption_event_image = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/Seppuku_1.dds"
+		environment = "environment_event_bedchamber"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}
+
+### COMMIT SEPPUKU EVENT IMAGE ###
+commit_seppuku_event_image = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/Seppuku_3.dds"
+		environment = "environment_event_bedchamber"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}
+
+### JUNSHI LORDS DEATH EVENT IMAGE ###
+junshi_lords_death_event_image = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/junshi_lords_death_event.dds"
+		environment = "environment_event_bedchamber"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}
+
+### REQUEST JUNSHI EVENT IMAGE ###
+request_junshi_event_image = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/vassal_request_junshi.dds"
+		environment = "environment_event_bedchamber"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}
+
+### REQUEST JUNSHI EVENT RESULT IMAGE ###
+request_junshi_event_result_image = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/vassal_request_junshi_result.dds"
+		environment = "environment_event_bedchamber"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}
+
+### COMMIT ACCEPTED JUNSHI EVENT RESULT IMAGE ###
+commit_junshi_accepted_image = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/junshi_commit_accepted.dds"
+		environment = "environment_event_bedchamber"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}
+
+### COMMIT DENIED JUNSHI EVENT RESULT IMAGE ###
+commit_junshi_denied_image = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/junshi_commit_denied.dds"
+		environment = "environment_event_bedchamber"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}
+
+### COMMIT JUNSHI DIDNT ASK EVENT RESULT IMAGE ###
+commit_junshi_didnt_ask_image = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/junshi_commit_didnt_ask.dds"
+		environment = "environment_event_bedchamber"
+		ambience = "event:/SFX/Events/Backgrounds/sittingroom_fireplace"
+	}
+}

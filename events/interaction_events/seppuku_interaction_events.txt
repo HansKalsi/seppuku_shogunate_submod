@@ -1,0 +1,36 @@
+namespace = custom_interaction
+
+# Demand Seppuku!
+custom_interaction.0001 = {
+	type = character_event
+	title = custom_seppuku_interaction_event.0001.t
+	desc = {
+		first_valid = {
+			desc = custom_seppuku_interaction_event.0001.desc
+		}
+	}
+
+	left_portrait = scope:actor
+	theme = death
+	override_background = {
+		event_background = commit_seppuku_event_image
+	}
+
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+
+	option = {
+		name = custom_seppuku_interaction_event.0001.a
+
+		show_as_toolip = {
+			add_prestige = 100
+			dynasty = {
+				add_dynasty_prestige = 50
+			}
+			seppuku_effect = {
+				VICTIM = scope:recipient
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+on_death = {
+    on_actions = {
+        dead_character_junshi_checker_pulse
+    }
+}
+dead_character_junshi_checker_pulse = {
+    effect = {
+        every_vassal = {
+            if = {
+                limit = {
+                    AND {
+				        NOT = { is_primary_heir_of = root.liege }
+                        NOT = { is_child_of = root }
+                        is_adult = yes
+                        is_landed = yes
+                        OR {
+                            root = { s_knight_of = liege }
+                            has_council_position = councillor_chancellor
+                            has_council_position = councillor_steward
+                            has_council_position = councillor_marshal
+                            has_council_position = councillor_spymaster
+                            has_council_position = councillor_court_chaplain
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        has_character_flag = junshiAPPROVED
+                    }
+                    trigger_event = seppuku_decision_event.0003
+                }
+                else_if = {
+                    limit = {
+                        has_character_flag = junshiDENIED
+                    }
+                    trigger_event = seppuku_decision_event.0004
+                }
+                else = {
+                    trigger_event = seppuku_decision_event.0005
+                }
+            }
+        }
+    }
+}
