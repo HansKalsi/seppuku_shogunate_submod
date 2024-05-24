@@ -264,10 +264,7 @@ seppuku_decision_event.0004 = {
 			base = 40
 		}
 
-		add_prestige = -500
-		dynasty = {
-			add_dynasty_prestige = -50
-		}
+		add_prestige = -100
 		root.liege = {
 			every_vassal = {
 				limit = {
@@ -276,7 +273,7 @@ seppuku_decision_event.0004 = {
 				add_opinion = {
 					modifier = dishonoured_junshi_opinion
 					target = root
-					opinion = -25
+					opinion = -10
 				}
 			}
 		}
@@ -324,7 +321,8 @@ seppuku_decision_event.0005 = {
 				}
 			}
 		}
-		
+
+		add_character_flag = committed_junshi_flag
 		death = {
 			death_reason = death_junshi
 		}

@@ -73,6 +73,7 @@ junshi_prestiege_opinion_effect = {
 					custom = all_close_family_and_spouses
 					add_prestige = 500
 				}
+				add_character_flag = committed_junshi_flag
 				death = {
 					death_reason = death_junshi
 				}
@@ -105,6 +106,7 @@ junshi_prestiege_opinion_effect = {
 					custom = all_close_family_and_spouses
 					add_prestige = 250
 				}
+				add_character_flag = committed_junshi_flag
 				death = {
 					death_reason = death_junshi
 				}

@@ -22,7 +22,7 @@
   seppuku_decision_event.0001.a:0 "Commit Seppuku"
   seppuku_decision_event.0001.b:0 "It is not my time to die."
 
-  death_seppuku:0 "committed Seppuku"
+  death_seppuku:0 "Committed Seppuku"
   death_seppuku_killer:0 "Committed Seppuku"
 
   msg_demanded_seppuku:0 "Committed Seppuku"
@@ -31,7 +31,7 @@
   IMPRISONED_SEPPUKU:0 "Demanding Seppuku on imprisoned character: $VALUE|=+0$"
 
   # Junshi localisation:
-  death_junshi:0 "committed Junshi"
+  death_junshi:0 "Committed Junshi"
 
   msg_commited_junshi:0 "Committed Junshi"
   msg_commited_junshi_desc:0 "Your vassal has committed Junshi"
@@ -65,7 +65,7 @@
   request_junshi_decision:0 "Request Junshi"
   request_junshi_decision_desc:0 "My Lord is ailing, I must request Junshi so that they do not have go into the dark alone!"
   request_junshi_decision_confirm:0 "I am prepared to give my life to spend eternity at your side!"
-  request_junshi_decision_tooltip:0 "Request Junshi from your liege"
+  request_junshi_decision_tooltip:0 "Request Junshi from your [liege|E]"
   request_junshi_decision_effect_tooltip:0 "Your liege will be given an event where they choose whether or not to approve your request to commit Junshi"
 
   commit_junshi_decision:0 "Commit Junshi"
@@ -73,3 +73,16 @@
   commit_junshi_decision_confirm:0 "I am prepared to give my life to spend eternity at your side!"
   commit_junshi_decision_tooltip:0 "Commit Junshi"
   commit_junshi_decision_effect_tooltip:0 "You will commit honourable Junshi"
+
+  # Rethikning Martyrdom innovation
+  unlock_outlaw_junshi:0 "Unlocks descision to outlaw Junshi"
+  innovation_rethinking_martyrdom:0 "Rethinking Martyrdom"
+  innovation_rethinking_martyrdom_desc:0 "Japan has a long history of honouring the dead, but the practice of Junshi has come under scrutiny. Some believe that the practice is outdated and should be outlawed, while others argue that it is a sacred tradition that should be preserved."
+
+  # Outlaw Junshi decision
+  outlaw_junshi_decision:0 "Outlaw Junshi"
+  outlaw_junshi_decision_desc:0 "The practice of Junshi is outdated and should be outlawed. It is time to put an end to this practice."
+  outlaw_junshi_decision_confirm:0 "The time has come!"
+  outlaw_junshi_decision_tooltip:0 "Outlaw Junshi in your [realm|E]"
+  outlaw_junshi_decision_effect_tooltip:0 "Junshi will be outlawed in your [realm|E]"
+  junshi_outlawed:0 "[realm|E] has not outlawed Junshi"

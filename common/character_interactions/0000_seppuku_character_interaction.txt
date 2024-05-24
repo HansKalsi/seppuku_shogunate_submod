@@ -25,8 +25,15 @@ custom_seppuku_interaction = {
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
-		scope:recipient = {
-			is_vassal_of = scope:actor
+		OR = {
+			scope:actor = {
+				basic_allowed_to_imprison_character_trigger = {
+					CHARACTER = scope:recipient
+				}
+			}
+			scope:recipient = {
+				is_imprisoned = yes
+			}
 		}
 		# Scope:recipient can't be visiting elsewhere.
 		trigger_if = {

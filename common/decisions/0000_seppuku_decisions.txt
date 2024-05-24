@@ -1,4 +1,6 @@
-﻿commit_seppuku_decision = {
+﻿#Seppuku decisions
+# Commit Seppuku
+commit_seppuku_decision = {
 	picture = "gfx/interface/illustrations/decisions/Seppuku_2.dds"
 	ai_check_interval = 6
 
@@ -16,58 +18,5 @@
 	effect = {
 		root = { trigger_event = seppuku_decision_event.0001 }
 		custom_tooltip = commit_seppuku_decision_effect_tooltip
-	}
-}
-
-#Junshi decisions
-request_junshi_decision {
-	picture = "gfx/interface/illustrations/decisions/request_junshi_decision.dds"
-	major = yes
-	ai_goal = yes
-
-	desc = request_junshi_decision_desc
-
-	ai_will_do = 10000
-
-	#shown if liege health is ailing and character is viable for Junshi
-	is_shown = {
-		AND {
-			AND {
-				NOT = { is_primary_heir_of = root.liege }
-                NOT = { is_child_of = root }
-				is_adult = yes
-				is_landed = yes
-				OR {
-					root = { is_knight_of = liege }
-					has_council_position = councillor_chancellor
-					has_council_position = councillor_steward
-					has_council_position = councillor_marshal
-					has_council_position = councillor_spymaster
-					has_council_position = councillor_court_chaplain
-				}
-			}
-			#if character is near death
-			liege = {
-				# three is threshold for when a character can actually die
-				health < 3
-			}
-			NOT = {
-				OR = {
-					has_character_flag = junshiAPPROVED
-					has_character_flag = junshiDENIED
-				}
-			}
-		}
-	}
-
-	effect = {
-		root = {
-			save_scope_as = requester
-		}
-		add_prestige = 100
-		liege = {
-			trigger_event = seppuku_decision_event.0002
-		}
-		custom_tooltip = request_junshi_decision_effect_tooltip
 	}
 }

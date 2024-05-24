@@ -1,0 +1,16 @@
+@rethinking_martyrdom = "gfx/interface/icons/culture_innovations/rethinking_martyrdom_innovation.png"
+
+innovation_rethinking_martyrdom = {
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+    icon = @rethinking_martyrdom
+
+	custom = unlock_outlaw_junshi
+	character_modifier = {
+		monthly_piety_gain_mult = 0.05
+		development_growth_factor = 0.05
+	}
+
+	flag = global_regional
+	flag = late_medieval_era_regular
+}
