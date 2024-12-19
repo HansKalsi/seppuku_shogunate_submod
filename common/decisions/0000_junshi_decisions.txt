@@ -1,7 +1,9 @@
 #Junshi decisions
 # Request Junshi
 request_junshi_decision = {
-	picture = "gfx/interface/illustrations/decisions/request_junshi_decision.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/request_junshi_decision.dds"
+	}	
 	major = yes
 	ai_goal = yes
 
@@ -97,7 +99,9 @@ request_junshi_decision = {
 
 # Outlaw Junshi
 outlaw_junshi_decision = {
-	picture = "gfx/interface/icons/culture_innovations/rethinking_martyrdom_innovation.png"
+	picture = {
+		reference = "gfx/interface/icons/culture_innovations/rethinking_martyrdom_innovation.png"
+	}
 	major = yes
 	ai_goal = yes
 

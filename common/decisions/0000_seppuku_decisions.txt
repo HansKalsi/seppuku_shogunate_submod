@@ -1,7 +1,9 @@
 ﻿#Seppuku decisions
 # Commit Seppuku
 commit_seppuku_decision = {
-	picture = "gfx/interface/illustrations/decisions/Seppuku_2.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/Seppuku_2.dds"
+	}
 	ai_check_interval = 6
 
 	desc = commit_seppuku_decision_desc
